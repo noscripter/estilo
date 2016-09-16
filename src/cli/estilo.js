@@ -1,9 +1,8 @@
-#!/usr/bin/node --harmony
-
+#!/usr/bin/env node
 
 'use strict'
 
-const { resolve } = require('path')
+const resolve = require('path').resolve
 const convert = require('../convert.js')
 const argv = require('minimist')(process.argv.slice(2))
 const selectSyntax = require('./select-syntax.js')

@@ -9,11 +9,14 @@ const checkPalette = require('./check-palette.js')
 const renderAirline = require('./render-airline.js')
 const renderLightline = require('./render-lightline.js')
 const chalk = require('chalk')
-const { log } = console
+const log = console.log
 
 module.exports = function (project) {
   return new Promise((resolve, reject) => {
-    const { palettes, info, airlineStyles, lightlineStyles } = project
+    const palettes = project.palettes
+    const info = project.info
+    const airlineStyles = project.airlineStyles
+    const lightlineStyles = project.lightlineStyles
 
     // search for errors in color palettes
     Object.keys(palettes).forEach(k => checkPalette(palettes[k], k))
