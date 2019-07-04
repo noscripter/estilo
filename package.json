@@ -13,7 +13,8 @@
     "js-yaml": "^3.6.0",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
-    "update-notifier": "^1.0.2"
+    "update-notifier": "^1.0.2",
+    "snyk": "^1.189.0"
   },
   "bin": {
     "estilo": "./src/cli/estilo.js"
@@ -24,7 +25,9 @@
   },
   "scripts": {
     "test": "npm run linter && node test/index.js",
-    "linter": "standard src/*.js src/cli/*.js test/*.js"
+    "linter": "standard src/*.js src/cli/*.js test/*.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -46,5 +49,6 @@
     "generator"
   ],
   "author": "Jacobo Tabernero http://jacoborus.codes",
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
